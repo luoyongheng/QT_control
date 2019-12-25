@@ -4,11 +4,11 @@
 
 cmake_minimum_required(VERSION 2.8.0)
 project(gui_subscriber)
-
+add_compile_options(-std=c++11)
 ##############################################################################
 # Catkin
 ##############################################################################
-
+set(CMAKE_PREFIX_PATH "/opt/ros/indigo")
 # qt_build provides the qt cmake glue, roscpp the comms for a default talker
 find_package(catkin REQUIRED COMPONENTS
     qt_build
@@ -20,7 +20,7 @@ find_package(catkin REQUIRED COMPONENTS
       )
 
 find_package(OpenCV REQUIRED)
-include_directories(${catkin_INCLUDE_DIRS}
+include_directories(include ${catkin_INCLUDE_DIRS}
     ${OpenCV_INCLUDE_DIRS})
 # Use this to define what the package will export (e.g. libs, headers).
 # Since the default here is to produce only a binary, we don't worry about

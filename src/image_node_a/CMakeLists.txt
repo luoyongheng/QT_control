@@ -9,6 +9,7 @@ if(WIN32 AND NOT CYGWIN)
 else()
     set(HOME $ENV{HOME})
 endif()
+set(CMAKE_PREFIX_PATH "/opt/ros/indigo")
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages

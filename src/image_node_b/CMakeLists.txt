@@ -12,6 +12,7 @@ endif()
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
+set(CMAKE_PREFIX_PATH "/opt/ros/indigo")
 find_package(catkin REQUIRED COMPONENTS
   roscpp
   std_msgs

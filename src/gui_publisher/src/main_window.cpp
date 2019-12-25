@@ -176,5 +176,3 @@ void MainWindow::on_Button_disp_sub_clicked(bool checked)
   ROS_INFO("I'm in publisher ,I want to call subscriber interface!");
 }
 }  // namespace gui_publisher
-
-

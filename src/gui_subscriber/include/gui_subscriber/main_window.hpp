@@ -44,6 +44,7 @@ public:
 	void closeEvent(QCloseEvent *event); // Overloaded function
 	void showNoMasterMessage();
 public Q_SLOTS:
+
 	/******************************************
 	** Auto-connections (connectSlotsByName())
 	*******************************************/
@@ -55,13 +56,31 @@ public Q_SLOTS:
     ** Manual connections
     *******************************************/
     void updateLoggingView(); // no idea why this can't connect automatically
-    void on_pushButton_back_clicked(bool checked);
-    void on_pushButton_clicked();
+    void updateLoggingView_sub(); //add
     void displayMat(cv::Mat image);
+
+    void on_forward_clicked();
+    void on_backward_clicked();
+    void on_left_clicked();
+    void on_right_clicked();
+
+    void on_right_vel_sliderMoved(int slider_value);
+    void on_left_vel_sliderMoved(int slider_value);
+    void on_forward_vel_sliderMoved(int slider_value);
+    void on_backward_vel_sliderMoved(int slider_value);
+    void on_rviz_clicked();
+    void on_gazebo_clicked();
+    void on_lcdNumber_overflow();
+    void on_lcdNumber_2_overflow();
+    void on_lcdNumber_3_overflow();
 private:
 	Ui::MainWindowDesign ui;
   QNode qnode;
+  double angular_value=0;
+  double linear_value=0;
+  double linear_value_old=0;
   cv::Mat image;
+  QTimer *timer;
 };
 
 }  // namespace gui_subscriber
